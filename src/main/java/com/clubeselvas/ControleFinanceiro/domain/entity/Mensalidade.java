@@ -1,5 +1,6 @@
 package com.clubeselvas.ControleFinanceiro.domain.entity;
 
+import com.clubeselvas.ControleFinanceiro.application.api.request.MensalidadeRequest;
 import com.clubeselvas.ControleFinanceiro.domain.enums.TipoPagamento;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -36,4 +37,12 @@ public class Mensalidade {
     private LocalDateTime dataHoraDoCadastro;
     private LocalDateTime dataHoraDaUltimaAlteracao;
 
+    public Mensalidade(MensalidadeRequest mensalidadeRequest) {
+        this.nomePagador = mensalidadeRequest.getNomePagador();
+        this.decricaoPagamento = mensalidadeRequest.getDecricaoPagamento();
+        this.tipoPagamento = mensalidadeRequest.getTipoPagamento();
+        this.valorMensalidade = mensalidadeRequest.getValorMensalidade();
+        this.dataPagamento = mensalidadeRequest.getDataPagamento();
+        this.dataHoraDoCadastro = LocalDateTime.now();
+    }
 }
