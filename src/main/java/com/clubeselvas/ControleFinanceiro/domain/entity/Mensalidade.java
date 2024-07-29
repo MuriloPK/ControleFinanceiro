@@ -22,15 +22,20 @@ public class Mensalidade {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, unique = true, nullable = false)
     private UUID idMensalidade;
+
     @NotBlank
     private String nomePagador;
+
     @NotBlank
     private String decricaoPagamento;
-    @NotBlank
+
+    @NotNull
     @Enumerated(EnumType.STRING)
     private TipoPagamento tipoPagamento;
+
     @NotNull
-    private Long valorMensalidade;
+    private Double valorMensalidade;
+
     @NotNull
     private LocalDate dataPagamento;
 

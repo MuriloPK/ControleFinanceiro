@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class MensalidadeServiceImpl implements MensalidadeService {
 
-    private MensalidadeRepository mensalidadeRepository;
+    private final MensalidadeRepository mensalidadeRepository;
 
     @Override
     public MensalidadeResponse criaMensalidade(MensalidadeRequest mensalidadeRequest) {

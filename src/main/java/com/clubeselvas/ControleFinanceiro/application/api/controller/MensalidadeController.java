@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class MensalidadeController implements MensalidadeApi {
 
-    private MensalidadeService mensalidadeService;
+    private final MensalidadeService mensalidadeService;
 
     @Override
     public MensalidadeResponse postMensalidade(MensalidadeRequest mensalidadeRequest) {

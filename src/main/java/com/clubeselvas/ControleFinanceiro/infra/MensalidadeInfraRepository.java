@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 public class MensalidadeInfraRepository implements MensalidadeRepository {
 
-    private MensalidadeSpringDataJpaRepository mensalidadeSpringDataJpaRepository;
+    private final MensalidadeSpringDataJpaRepository mensalidadeSpringDataJpaRepository;
 
     @Override
     public Mensalidade salva(Mensalidade mensalidade) {
