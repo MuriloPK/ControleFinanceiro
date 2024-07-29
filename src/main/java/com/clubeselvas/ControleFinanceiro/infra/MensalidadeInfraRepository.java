@@ -9,6 +9,8 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @Log4j2
 @RequiredArgsConstructor
@@ -26,5 +28,13 @@ public class MensalidadeInfraRepository implements MensalidadeRepository {
         }
         log.info("[finaliza]MensalidadeInfraRepository - salva");
         return mensalidade;
+    }
+
+    @Override
+    public List<Mensalidade> buscaTodasMensalidades() {
+        log.info("[inicia]MensalidadeInfraRepository - buscaTodasMensalidades");
+        List<Mensalidade> todasMensalidades = mensalidadeSpringDataJpaRepository.findAll();
+        log.info("[finaliza]MensalidadeInfraRepository - buscaTodasMensalidades");
+        return todasMensalidades;
     }
 }
